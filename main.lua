@@ -3,15 +3,30 @@ local utf8 = require("utf8")
 
 
 function love.load()
-    local file = io.open("testFile.txt")
+    local file = io.open("aleatorio.txt")
 
-    if file ~= nil then
-        Text = file.read("*all")
+
+    -- variaveis estaticas
+    love.graphics.setNewFont("assests/Fonts/SourceCodePro-Italic-VariableFont_wght.ttf", 25) 
+
+    love.graphics.setBackgroundColor(0,0,0)
+   
+    
+    local icon = love.image.newImageData("assests/imgs/icon.png")
+    if icon ~= nil then
+        love.window.setIcon(icon)
     end
     
-    Text = "type away: "
-    
+
+
+    if file ~= nil then
+        Text = file:read("a")
+    else
+        Text = "New file..."
+    end
 end
+
+
 
 function love.textinput(t)
    Text =  Text .. t
@@ -28,6 +43,11 @@ function love.keypressed(key)
             Text =  string.sub(Text, 1, byteoffset-1)
         end
     end
+end
+
+-- loop repetida pelo delta.time(dt)
+function love.update(dt)
+
 end
 
 
