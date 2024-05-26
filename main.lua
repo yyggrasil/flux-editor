@@ -11,12 +11,13 @@ function love.load()
 
     love.graphics.setBackgroundColor(0,0,0)
    
-    
+    --[[ failed to set new icon
     local icon = love.image.newImageData("assests/imgs/icon.png")
     if icon ~= nil then
-        love.window.setIcon(icon)
+        sucess = love.window.setIcon(icon)
+        print(sucess)
     end
-    
+   ]] 
 
 
     if file ~= nil then
