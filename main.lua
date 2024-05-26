@@ -2,13 +2,13 @@ local love = require("love")
 local utf8 = require("utf8")
 local load = require("load")
 
-
-load.loadAll()
+-- call the load file
+load.loadAll(arg)
 
 
 function love.textinput(t)
    Text =  Text .. t
-   
+
    -- enable to repeat letter if key is hold down 
    love.keyboard.setKeyRepeat(true)
 end
