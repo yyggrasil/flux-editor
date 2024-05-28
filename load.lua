@@ -3,9 +3,17 @@ load = {}
 function load.loadAll(arg)
     print(arg[2])
     if arg ~= nil then
-        Filename = arg[2]
-    else
-        Filename = "testFile.txt"
+        if arg[2] ~= nil then
+            Filename = arg[2]
+        elseif arg[1] ~= "." then
+            Filename = arg[1]
+        else
+            Filename = "testFile.txt"
+        end
+    end
+
+    if Filename == nil then
+        Filename = "testFile.txt" -- substitute later for a blank stencil that can create a new file
     end
 
 
