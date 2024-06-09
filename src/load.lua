@@ -1,19 +1,15 @@
 load = {}
 
 function load.loadAll(arg)
-    if arg ~= nil then
-        if arg[2] ~= nil then
-            Filename = arg[2]
-        elseif arg[1] ~= "." then
-            Filename = arg[1]
-        end
-    end
 
+    
 
 
     function love.load()
         if Filename ~= nil then
             File = io.open(Filename) 
+        else
+            File = io.open("../.debug/testFile.txt")
         end
         
         
