@@ -2,14 +2,9 @@ load = {}
 
 function load.loadAll(arg)
 
-    
-
-
     function love.load()
         if Filename ~= nil then
-            File = io.open(Filename) 
-        else
-            File = io.open("../.debug/testFile.txt")
+            File = io.open(Filename)
         end
         
         
@@ -24,7 +19,7 @@ function load.loadAll(arg)
         if File ~= nil then
             Text = File:read("a")
         else
-            Text = ""
+            Text = " "
         end
     end
 end
